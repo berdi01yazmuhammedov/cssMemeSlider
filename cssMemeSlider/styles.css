@@ -15,18 +15,13 @@ body {
 
 .slider {
   width: 80vw;
-  /* Относительная ширина */
   max-width: 600px;
-  /* Максимальная ширина */
   border: 2px solid #ccc;
   border-radius: 0.5rem;
-  /* Относительное значение */
   overflow: hidden;
   background-color: #25282a;
   padding: 1rem;
-  /* Относительное значение */
   box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
-  /* Относительное значение */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,21 +47,18 @@ input[type="radio"] {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  /* Для центрирования текста */
 }
 
 img {
   width: 100%;
   height: auto;
   border-radius: 0.5rem;
-  /* Относительное значение */
+
 }
 
 .caption {
   font-size: 1rem;
-  /* Относительное значение */
   margin-top: 0.5rem;
-  /* Относительное значение */
   color: #fff;
 }
 
@@ -74,9 +66,7 @@ img {
   display: flex;
   justify-content: end;
   gap: 0.5rem;
-  /* Относительное значение */
   margin-top: 0.5rem;
-  /* Относительное значение */
   padding: 0.5rem;
   margin: 0;
 }
