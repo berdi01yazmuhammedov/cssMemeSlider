@@ -1,0 +1,158 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.slider {
+  width: 80vw;
+  /* Относительная ширина */
+  max-width: 600px;
+  /* Максимальная ширина */
+  border: 2px solid #ccc;
+  border-radius: 0.5rem;
+  /* Относительное значение */
+  overflow: hidden;
+  background-color: #25282a;
+  padding: 1rem;
+  /* Относительное значение */
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1);
+  /* Относительное значение */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slides {
+  width: 100%;
+  overflow: hidden;
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+.slider-wrapper {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* Для центрирования текста */
+}
+
+img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  /* Относительное значение */
+}
+
+.caption {
+  font-size: 1rem;
+  /* Относительное значение */
+  margin-top: 0.5rem;
+  /* Относительное значение */
+  color: #fff;
+}
+
+.controls {
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+  /* Относительное значение */
+  margin-top: 0.5rem;
+  /* Относительное значение */
+  padding: 0.5rem;
+  margin: 0;
+}
+
+.control {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background-color: #71abfe;
+  border: 2px solid #71abfe;
+  cursor: pointer;
+  transition: border 0.3s ease, background-color 0.3s ease, transform 0.1s ease;
+  margin: 0;
+ z-index: 1;
+  
+}
+
+.control:hover {
+  background-color: #fff;
+  border: 2px solid #fff;
+}
+
+.control:active {
+  transform: scale(1.2);
+}
+
+input#slide1:checked~.slider-wrapper {
+  transform: translateX(0%);
+}
+
+input#slide2:checked~.slider-wrapper {
+  transform: translateX(-100%);
+}
+
+input#slide3:checked~.slider-wrapper {
+  transform: translateX(-200%);
+}
+
+input#slide4:checked~.slider-wrapper {
+  transform: translateX(-300%);
+}
+
+input#slide1:checked~.controls label[for="slide1"],
+input#slide2:checked~.controls label[for="slide2"],
+input#slide3:checked~.controls label[for="slide3"],
+input#slide4:checked~.controls label[for="slide4"] {
+  background-color: #333;
+  border-color: #71abfe;
+}
+
+@media (max-width: 768px) {
+  .slider {
+    width: 90%;
+    padding: 0.5rem;
+   
+  }
+
+  .caption {
+    font-size: 0.875rem;
+    margin-top: 0.5rem; 
+    order: 3;
+  }
+
+  .controls {
+    justify-content: center;
+    margin-top: 0.5rem;
+    order: 2;
+  }
+
+  .slide {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .slide img {
+    margin-bottom: 0.5rem;
+    order: 1;
+  }
+}
